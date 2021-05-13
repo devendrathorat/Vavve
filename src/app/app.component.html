@@ -8,43 +8,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Maxxton</title>
+    <title>Vavve</title>
 
    </head>
 
   <body>
 
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-      <h5 class="my-0 mr-md-auto font-weight-normal">Maxxton</h5>
-     
-      <a class="btn btn-outline-primary" routerLink="/sortByName" routerLinkActive="active" style="margin-left: 10px;"> Sort by name</a>
-      <a class="btn btn-outline-primary" routerLink="/searchByName" routerLinkActive="active"  style="margin-left: 10px;">Search by name</a>
-      <a class="btn btn-outline-primary"  routerLink="/experience" routerLinkActive="active" style="margin-left: 10px;">experience more than 2 years</a>
-      <a class="btn btn-outline-primary"   routerLink="/removeCandidate" routerLinkActive="active"  style="margin-left: 10px;">Remove Candidates</a>
-    </div>
+    <br>
+<h2>{{title}}</h2>
+<br>
+ <div class="form-group" style="border:2px solid;padding: 10px" >
+        <label for="name">Select Number Range</label>
+        <angular2-multiselect [data]="itemList" [(ngModel)]="selectedItems" 
+                              [settings]="settings" 
+                              (onSelect)="onItemSelect($event)"
+                              (onDeSelect)="OnItemDeSelect($event)" 
+                              (onSelectAll)="onSelectAll($event)" 
+                              (onDeSelectAll)="onDeSelectAll($event)" name="itemName">
+        </angular2-multiselect>
+        <button (click)="onSubmitFun()">Submit</button>
 
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <h1 class="display-4">Candidate Information</h1>
-      <p>Please click on above tab for data</p>
-    </div>
-
-    <div class="container">
-      <div class="card-deck mb-3 text-center">
-        <div class="card mb-4 box-shadow">
-         
-            <router-outlet></router-outlet>
-
-        
-        </div>
-       
       </div>
+   
+<br><br>
 
-      
+ <div class="form-group" style="border:2px solid;padding: 10px" >
+      <label for="name">Selected   Range</label>
+      <angular2-multiselect [data]="saveSelectIten" [(ngModel)]="saveSelectIten" 
+                            [settings]="settings" 
+                            (onSelect)="onItemSelect2($event)"
+                            (onDeSelect)="OnItemDeSelect2($event)" 
+                            (onSelectAll)="onSelectAll2($event)" 
+                            (onDeSelectAll)="onDeSelectAll2($event)">
+      </angular2-multiselect>
+      <button type="submit" (click)="submitSecond()">Submit</button> 
     </div>
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
+  
+    
  
   </body>
 </html>

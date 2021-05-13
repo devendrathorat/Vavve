@@ -9,6 +9,8 @@ import { ExperienceComponent } from './employee/experience/experience.component'
 import { RemovecandidateComponent } from './employee/removecandidate/removecandidate.component';
 import { SearchcandidateComponent } from './employee/searchcandidate/searchcandidate.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
+
 import { FormsModule } from '@angular/forms';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
@@ -27,8 +29,9 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     BrowserModule,
     AppRoutingModule,
     Ng2SearchPipeModule,
+    AngularMultiSelectModule,
     FormsModule
-
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

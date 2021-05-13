@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeecommonService } from 'src/app/employeecommon.service';
+import { Observable,Subscriber } from 'rxjs';
+
 
 @Component({
   selector: 'app-experience',
@@ -14,8 +16,6 @@ export class ExperienceComponent implements OnInit {
   constructor(private _empService:EmployeecommonService) { }
 
  
-
-
   headingName:String ="All candidates with experience more than 2 years";
 
   ngOnInit() {
@@ -46,4 +46,22 @@ export class ExperienceComponent implements OnInit {
     
   }
 
+   pr = new Promise((resolve)=>{
+
+    setTimeout(()=>{
+      alert("promise cal")
+      resolve("resolve");
+    },1000)
+  })
+
+
+  ob = new Observable((observer)=>{
+
+    setTimeout(()=>{
+      alert("Obser cal")
+      observer.next("resolve");
+    },1000)
+  })
+
+ // ob.Subscriber(console.log);
 }
